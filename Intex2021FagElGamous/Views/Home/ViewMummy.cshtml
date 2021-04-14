@@ -1,14 +1,10 @@
-﻿@*
-*@
-@{
-}
+﻿@{ ViewData["Title"] = "Mummies"; }
 @model ViewBurialViewModel
-
 <!-- Page Content -->
 <div class="container">
 
     <!-- Page Heading/Breadcrumbs -->
-   <h1 class="mt-4 mb-3">@Model.BurialSite.NS @Model.BurialSite.Nstop/@Model.BurialSite.Nsbottom @Model.BurialSite.EW @Model.BurialSite.Ewtop/@Model.BurialSite.Ewbottom #@Model.Burial.BurialNumber</h1>
+    <h1 class="mt-4 mb-3">@Model.BurialSite.NS @Model.BurialSite.Nstop/@Model.BurialSite.Nsbottom @Model.BurialSite.EW @Model.BurialSite.Ewtop/@Model.BurialSite.Ewbottom #@Model.Burial.BurialNumber</h1>
 
     <div class="row">
         <!-- Post Content Column -->
@@ -154,17 +150,20 @@
                 </div>
             </div>
 
-            <!-- Categories Widget -->
-            <div class="card my-4">
-                <div class="card-body text-center">
-                    <h3>Want To Edit This Record?</h3>
+            @if (GlobalStatic.role != "Null" && GlobalStatic.role != "No Role")
+            {
+                <!-- Categories Widget -->
+                <div class="card my-4">
+                    <div class="card-body text-center">
+                        <h3>Want To Edit This Record?</h3>
+                    </div>
+                    <button type="submit" class="btn button1 right btn-Dark" onclick="location.href='@Url.Action("EditMummy", "Home", Model)'">Edit &rarr;</button>
                 </div>
-                <button type="submit" class="btn button1 right btn-Dark" onclick="location.href='@Url.Action("EditMummy", "Home", Model)'">Edit &rarr;</button>
-            </div>
-            </div>
-
+             }
         </div>
+
     </div>
-    <!-- /.row -->
+</div>
+<!-- /.row -->
 </div>
 <!-- /.container -->

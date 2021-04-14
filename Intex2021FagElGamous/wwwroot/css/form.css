@@ -1,15 +1,9 @@
-﻿@import "bourbon";
-
-
+﻿﻿@import "bourbon";
 
 $bezier: cubic-bezier(0.215, 0.610, 0.355, 1.000);
 $time: 300ms;
 
-
-
 $base-font-family: "Avenir Next", "Avenir", "Helvetica Neue", Helvetica, Arial, sans-serif;
-
-
 
 @mixin animated( $time: 300ms, $fillmode: both, $count: 1) {
     animation-duration: $time;
@@ -17,14 +11,10 @@ $base-font-family: "Avenir Next", "Avenir", "Helvetica Neue", Helvetica, Arial, 
     animation-iteration-count: $count;
 }
 
-
-
 .funkay {
     font-size: 18px;
     font-weight: 600;
 }
-
-
 
 body {
     background-color: #363E4A;
@@ -34,8 +24,6 @@ body {
     line-height: 1.5;
 }
 
-
-
 h1 {
     font-family: "Texta", $base-font-family;
     font-weight: 700;
@@ -44,15 +32,11 @@ h1 {
     text-align: center;
 }
 
-
-
 h2 {
     font-weight: 400;
     font-size: 24px;
     color: rgba(255, 255, 255, .4);
 }
-
-
 
 .container {
     max-width: 800px;
@@ -62,23 +46,17 @@ h2 {
     text-align: left;
 }
 
-
-
 .form-footer {
     margin-top: 2em;
     position: relative;
     width: 100%;
 }
 
-
-
 .ui-input {
     position: relative;
     padding: 0;
     border: 0;
 }
-
-
 
     .ui-input input {
         font-family: $base-font-family;
@@ -92,8 +70,6 @@ h2 {
         touch-callout: none;
     }
 
-
-
         .ui-input input + label {
             position: relative;
             display: block;
@@ -105,8 +81,6 @@ h2 {
             text-align: left;
             &::before, &::after
 
-
-
 {
     position: absolute;
     top: 0;
@@ -116,13 +90,9 @@ h2 {
     height: 1px;
 }
 
-
-
 &::before {
     background-color: rgba(255, 255, 255, .2);
 }
-
-
 
 &::after {
     transform: scaleX(0);
@@ -132,15 +102,11 @@ h2 {
     height: 2px;
 }
 
-
-
 span {
     position: relative;
     color: rgba(255, 255, 255, .2);
     transition: color $time $bezier;
     &::after
-
-
 
 {
     content: attr(data-text);
@@ -164,27 +130,19 @@ span {
 }
 }
 
-
-
 .ui-input input:focus,
 .ui-input input.error,
 .ui-input input:invalid,
 .ui-input input.filled {
     & + label
 
-
-
 {
     &::after
-
-
 
 {
     transform: scaleX(1);
     transform-origin: left;
 }
-
-
 
 span::after {
     //color: #4A90E2;
@@ -195,24 +153,16 @@ span::after {
 }
 }
 
-
-
 .ui-input input.filled {
     color: #ffffff;
     & + label
 
-
-
 {
     &::after
-
-
 
 {
     background-color: #ffffff;
 }
-
-
 
 span::after {
     background-image: linear-gradient(to right, #ffffff 50%, rgba(255,255,255,0) 0%);
@@ -222,24 +172,16 @@ span::after {
 }
 }
 
-
-
 .ui-input input:focus {
     color: #6EB1FF;
     & + label
 
-
-
 {
     &::after
-
-
 
 {
     background-color: #6EB1FF;
 }
-
-
 
 span::after {
     background-image: linear-gradient(to right, #6EB1FF 50%, rgba(255,255,255,0) 0%);
@@ -249,25 +191,17 @@ span::after {
 }
 }
 
-
-
 .ui-input input.error,
 .ui-input input:invalid {
     color: #E66161;
     & + label
 
-
-
 {
     &::after
-
-
 
 {
     background-color: #E66161;
 }
-
-
 
 span::after {
     background-image: linear-gradient(to right, #E66161 50%, rgba(255,255,255,0) 0%);
@@ -276,8 +210,6 @@ span::after {
 
 }
 }
-
-
 
 .btn {
     border: 0;
@@ -295,15 +227,11 @@ span::after {
     transition: background-color $time $bezier, color $time $bezier;
 }
 
-
-
     .btn:focus, .btn:active,
     .btn:hover {
         background-color: #DEB887;
         color: white;
     }
-
-
 
 .__first, .__second, .__third, .__fourth {
     animation-name: fadeIn;
@@ -312,31 +240,21 @@ span::after {
     animation-iteration-count: 1;
 }
 
-
-
 .__first {
     animation-delay: 0;
 }
-
-
 
 .__second {
     animation-delay: 80ms;
 }
 
-
-
 .__third {
     animation-delay: 180ms;
 }
 
-
-
 .__fourth {
     animation-delay: 360ms;
 }
-
-
 
 @keyframes fadeIn {
     from {
@@ -344,39 +262,28 @@ span::after {
         transform: translate3d(0, -25%, 0);
     }
 
-
-
     to {
         opacity: 1;
         transform: translate3d(0, 0, 0);
     }
 }
-[9:11 PM] Addison Howard
-
-
 
 .select-box {
-    ​​​​​​​​ cursor: pointer;
+    cursor: pointer;
     position: relative;
     max-width: 20em;
     width: 100%;
 }
 
-​​​​​​​​
-
-
 .select,
 .label {
-    ​​​​​​​​ color: #414141;
+    color: #414141;
     display: block;
     font: 400 17px/2em 'Source Sans Pro', sans-serif;
 }
 
-​​​​​​​​
-
-
 .select {
-    ​​​​​​​​ width: 100%;
+    width: 100%;
     position: absolute;
     top: 0;
     padding: 5px 0;
@@ -387,34 +294,22 @@ span::after {
     border: 0 none;
 }
 
-​​​​​​​​
-
-
 .select-box1 {
-    ​​​​​​​​ background: #ececec;
+    background: #ececec;
 }
 
-​​​​​​​​
-
-
 .label {
-    ​​​​​​​​ position: relative;
+    position: relative;
     padding: 5px 10px;
     cursor: pointer;
 }
 
-​​​​​​​​
-
-
 .open .label::after {
-    ​​​​​​​​ content: "▲";
+    content: "▲";
 }
 
-​​​​​​​​
-
-
 .label::after {
-    ​​​​​​​​ content: "▼";
+    content: "▼";
     font-size: 12px;
     position: absolute;
     right: 0;
@@ -423,28 +318,19 @@ span::after {
     border-left: 5px solid #fff;
 }
 
-​​​​​​​​
-
-
 *
 .container {
-    ​​​​​​​​ max-width: 1100px;
+    max-width: 1100px;
     padding: 0 20px;
     margin: 0 auto;
 }
 
-​​​​​​​​
-
-
 .panel {
-    ​​​​​​​​ max-width: 500px;
+    max-width: 500px;
 }
 
-​​​​​​​​
-
-
 .button_outer {
-    ​​​​​​​​ background: #50617A;
+    background: #50617A;
     border-radius: 30px;
     text-align: center;
     height: 50px;
@@ -455,19 +341,13 @@ span::after {
     overflow: hidden;
 }
 
-    ​​​​​​​​
-
-
     .button_outer:focus, .button_outer:active, .button_outer:hover {
-        ​​​​​​​​ background-color: #DEB887;
+        background-color: #DEB887;
         color: white;
     }
 
-​​​​​​​​
-
-
 .btn_upload {
-    ​​​​​​​​ padding: 17px 30px 12px;
+    padding: 17px 30px 12px;
     text-transform: uppercase;
     letter-spacing: .0875em;
     font-weight: 500;
@@ -483,11 +363,8 @@ span::after {
     line-height: 1.5;
 }
 
-    ​​​​​​​​
-
-
     .btn_upload input {
-        ​​​​​​​​ position: absolute;
+        position: absolute;
         width: 100%;
         left: 0;
         top: 0;
@@ -497,28 +374,19 @@ span::after {
         opacity: 0;
     }
 
-​​​​​​​​
-
-
 .file_uploading {
-    ​​​​​​​​ width: 100%;
+    width: 100%;
     height: 10px;
     margin-top: 20px;
     background: #ccc;
 }
 
-    ​​​​​​​​
-
-
     .file_uploading .btn_upload {
-        ​​​​​​​​ display: none;
+        display: none;
     }
 
-​​​​​​​​
-
-
 .processing_bar {
-    ​​​​​​​​ position: absolute;
+    position: absolute;
     left: 0;
     top: 0;
     width: 0;
@@ -528,28 +396,19 @@ span::after {
     transition: 3s;
 }
 
-​​​​​​​​
-
-
 .file_uploading .processing_bar {
-    ​​​​​​​​ width: 100%;
+    width: 100%;
 }
 
-​​​​​​​​
-
-
 .success_box {
-    ​​​​​​​​ display: none;
+    display: none;
     width: 50px;
     height: 50px;
     position: relative;
 }
 
-    ​​​​​​​​
-
-
     .success_box:before {
-        ​​​​​​​​ content: '';
+        content: '';
         display: block;
         width: 9px;
         height: 18px;
@@ -564,28 +423,19 @@ span::after {
         top: 10px;
     }
 
-​​​​​​​​
-
-
 .file_uploaded .success_box {
-    ​​​​​​​​ display: inline-block;
+    display: inline-block;
 }
 
-​​​​​​​​
-
-
 .file_uploaded {
-    ​​​​​​​​ margin-top: 0;
+    margin-top: 0;
     width: 50px;
     background: #83ccd3;
     height: 50px;
 }
 
-​​​​​​​​
-
-
 .uploaded_file_view {
-    ​​​​​​​​ max-width: 300px;
+    max-width: 300px;
     margin: 40px auto;
     text-align: center;
     position: relative;
@@ -595,11 +445,8 @@ span::after {
     padding: 15px;
 }
 
-​​​​​​​​
-
-
 .file_remove {
-    ​​​​​​​​ width: 30px;
+    width: 30px;
     height: 30px;
     border-radius: 50%;
     display: block;
@@ -613,61 +460,20 @@ span::after {
     top: -15px;
 }
 
-    ​​​​​​​​
-
-
     .file_remove:hover {
-        ​​​​​​​​ background: #222;
+        background: #222;
         transition: .2s;
     }
 
-​​​​​​​​
-
-
 .uploaded_file_view img {
-    ​​​​​​​​ max-width: 100%;
+    max-width: 100%;
 }
-
-​​​​​​​​
-
 
 .uploaded_file_view.show {
-    ​​​​​​​​ opacity: 1;
+    opacity: 1;
 }
-
-​​​​​​​​
-
 
 .error_msg {
-    ​​​​​​​​ text-align: center;
+    text-align: center;
     color: #f00
 }
-
-​​​​​​​​
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

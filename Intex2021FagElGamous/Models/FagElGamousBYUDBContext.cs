@@ -41,6 +41,7 @@ namespace Intex2021FagElGamous.Models
 
             modelBuilder.Entity<BiologicalSample>(entity =>
             {
+                // entity.HasNoKey();
                 entity.HasNoKey();
 
                 entity.Property(e => e.BioSampleId)
@@ -655,7 +656,7 @@ namespace Intex2021FagElGamous.Models
 
             modelBuilder.Entity<User>(entity =>
             {
-                entity.HasNoKey();
+               // entity.HasNoKey();
 
                 entity.Property(e => e.Email)
                     .HasMaxLength(50)

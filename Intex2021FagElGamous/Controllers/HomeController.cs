@@ -65,7 +65,9 @@ namespace Intex2021FagElGamous.Controllers
         {
             GlobalBurials = context.Burials.ToList();
 
-            return View();
+
+
+            return View(context.C14data.ToList());
         }
 
         //OrderByDescending(o => o.FieldBooksId).ToList();
@@ -107,6 +109,7 @@ namespace Intex2021FagElGamous.Controllers
                 string Length = null;
                 string Goods = null;
                 string GenderCode = null;
+                string HasImage = "No";
 
 
                 if (!(b.OsteologyNotes is null))
@@ -178,7 +181,17 @@ namespace Intex2021FagElGamous.Controllers
                     .BurialSites
                     .FromSqlRaw("SELECT * FROM BurialSite WHERE BurialSiteId = {0}", b.BurialSiteId).ToList().First().Quadrant.ToString();
 
+                int numOfImages = context.Images.FromSqlRaw("SELECT * FROM Image WHERE BurialSiteId = {0} AND BurialNumber = {1}", b.BurialSiteId, b.BurialNumber).ToList().Count();
 
+
+                if (numOfImages > 0)
+                {
+                    Console.WriteLine("check this out heeraijdflkjasdflkjasdlfkjasldkfjalskdfj");
+                    HasImage = "Yes";
+                } else
+                {
+                    Console.WriteLine("no");
+                }
                 // add all the info to the vbbm
                 vbbm.BurialNumber = BurialNumber;
                 vbbm.NS = NS;
@@ -198,6 +211,7 @@ namespace Intex2021FagElGamous.Controllers
                 vbbm.Goods = Goods;
                 vbbm.GenderCode = GenderCode;
                 vbbm.BurialSiteId = BurialSiteId;
+                vbbm.HasImage = HasImage;
 
                 vbbmList.Add(vbbm);
             }
@@ -623,7 +637,7 @@ namespace Intex2021FagElGamous.Controllers
             ViewBurialViewModel vbvm = new ViewBurialViewModel();
             vbvm.Burial = b;
             vbvm.BurialSite = bs;
-            vbvm.C14Data = c14Data;
+           // vbvm.C14Data = c14Data;
             vbvm.CranialMains = cranialMains;
             vbvm.FieldBooks = fieldBooks;
             // add image urls
@@ -636,6 +650,7 @@ namespace Intex2021FagElGamous.Controllers
         //edit quote allows for users to edit the quote and copies the quote they want to edit
         public IActionResult EditMummy(ViewBurialViewModel mummy)
         {
+            return View("Index");
             //Console.WriteLine(mummy.BurialSite);
 
             ////Console.WriteLine(mummy.BurialSite.NS);
@@ -713,8 +728,13 @@ namespace Intex2021FagElGamous.Controllers
             //context.SaveChanges();
             return View();        }
 
-
+        [HttpGet]
         public IActionResult C14data()        {            if (GlobalStatic.role == "No Role")            {                return View("Index");            }            return View();        }        [HttpPost]        public IActionResult C14data(C14datum cdatum)        {
+            if (GlobalStatic.role == "No Role")            {                return View("Index");            }
+
+            context.C14data.Add(cdatum);
+            context.SaveChanges();
+
             //context.Add.Add(mummy);
 
             //context.SaveChanges();
@@ -737,7 +757,22 @@ namespace Intex2021FagElGamous.Controllers
             return View();
         }
 
+        [HttpGet]
+        public IActionResult AddFiles()
+        {
+            if (GlobalStatic.role == "No Role")
+            {
+                return View("Index");
+            }
 
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult AddFiles(Image image)
+        {
+            return View();
+        }
         [HttpGet]
         public IActionResult AddFieldBook()
         {

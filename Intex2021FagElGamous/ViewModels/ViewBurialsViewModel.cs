@@ -14,6 +14,8 @@ namespace Intex2021FagElGamous.Models
 
     public class ViewBurialsFilteringInfo
     {
+        public string HasImage { get; set; }
+
         public string NS { get; set; }
         public int NSTop { get; set; }
         public int NSBottom { get; set; }
@@ -73,6 +75,7 @@ namespace Intex2021FagElGamous.Models
 
     public class ViewBurialsBurialModel
     {
+        public string HasImage { get; set; }
         public string NS { get; set; }
         public int NSTop { get; set; }
         public int NSBottom { get; set; }

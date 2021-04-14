@@ -33,44 +33,51 @@
 
                     @if (GlobalStatic.userID is null) //If user is no signed in
                     {
-        <li class="nav-item">
-            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Signin">Log In</a>
-        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Register">Register</a>
-                        </li>}
+                <li class="nav-item">
+                    <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Signin">Log In</a>
+                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Register">Register</a>
+                                </li>
+}
                     @if (!(GlobalStatic.userID is null)) // If user is signed in
                     {
-        @if (GlobalStatic.role == "Admin" || GlobalStatic.role == "Researcher")
-        {
-<li class="nav-item">
-    <a class="nav-link " asp-area="" asp-controller="Home" asp-action="AddBurial">Add Burial</a>
-</li>
-                    <li class="nav-item">
-                        <a class="nav-link " asp-area="" asp-controller="Home" asp-action="AddFieldBook">Add Field Book</a>
-                    </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link " asp-area="" asp-controller="Home" asp-action="AddBiologicalSite">Add Biological Sample</a>
-                                        </li>
-                                                            <li class="nav-item">
-                                                                <a class="nav-link " asp-area="" asp-controller="Home" asp-action="C14data">Add C14 Data</a>
-                                                            </li>
-                                                                                <li class="nav-item">
-                                                                                    <a class="nav-link " asp-area="" asp-controller="Home" asp-action="">Add Cranial Main</a>
-                                                                                </li>}
-
-                        @if (GlobalStatic.role == "Admin")
-                        {
-        <li class="nav-item">
-            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Admin">Admin</a>
-        </li>}
-
-                                        <li class="nav-item">
-                                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Profile">Welcome @GlobalStatic.FirstName!</a>
-                                        </li>
+                @if (GlobalStatic.role == "Admin" || GlobalStatic.role == "Researcher")
+                {
+                <li class="nav-item">
+                    <a class="nav-link " asp-area="" asp-controller="Home" asp-action="AddBurial">Add Burial</a>
+                </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link " asp-area="" asp-controller="Home" asp-action="AddFieldBook">Add Field Book</a>
+                                    </li>
                                                         <li class="nav-item">
-                                                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Logout">Logout</a>
-                                                        </li>}
+                                                            <a class="nav-link " asp-area="" asp-controller="Home" asp-action="AddBiologicalSite">Add Biological Sample</a>
+                                                        </li>
+                                                                            <li class="nav-item">
+                                                                                <a class="nav-link " asp-area="" asp-controller="Home" asp-action="C14data">Add C14 Data</a>
+                                                                            </li>
+                                                                                                <li class="nav-item">
+                                                                                                    <a class="nav-link " asp-area="" asp-controller="Home" asp-action="AddCranial">Add Cranial Main</a>
+                                                                                                </li>
+                                                                                                                    <li class="nav-item">
+                                                                                                                        <a class="nav-link " asp-area="" asp-controller="Home" asp-action="AddFiles">Add Files</a>
+                                                                                                                    </li>
+}
+
+                                @if (GlobalStatic.role == "Admin")
+                                {
+                <li class="nav-item">
+                    <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Admin">Admin</a>
+                </li>
+}
+
+                                                <li class="nav-item">
+                                                    <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Profile">Welcome @GlobalStatic.FirstName!</a>
+                                                </li>
+                                                                <li class="nav-item">
+                                                                    <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Logout">Logout</a>
+                                                                </li>
+}
                 </ul>
             </div>
         </div>
