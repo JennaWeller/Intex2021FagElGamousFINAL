@@ -1,0 +1,170 @@
+﻿@*
+*@
+@{
+}
+@model ViewBurialViewModel
+
+<!-- Page Content -->
+<div class="container">
+
+    <!-- Page Heading/Breadcrumbs -->
+   <h1 class="mt-4 mb-3">@Model.BurialSite.NS @Model.BurialSite.Nstop/@Model.BurialSite.Nsbottom @Model.BurialSite.EW @Model.BurialSite.Ewtop/@Model.BurialSite.Ewbottom #@Model.Burial.BurialNumber</h1>
+
+    <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+
+            <!-- Post Content -->
+            <div class="mb-4" id="accordion" role="tablist" aria-multiselectable="true">
+                <div class="card">
+                    <div class="card-header" role="tab" id="headingOne">
+                        <h5 class="text-secondary">
+                            <a data-toggle="collapse text-secondary" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Burial Site Location: </a>
+                        </h5>
+                    </div>
+
+
+                    <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+                        <div class="card-body">
+                            <p>Gamous ID: @Model.Burial.Gamous</p>
+                            <p>Burial Site ID: @Model.Burial.BurialSiteId</p>
+                            <p>Burial Number: @Model.Burial.BurialNumber</p>
+                            <p>West to Head: @Model.Burial.BurialWestToHead</p>
+                            <p>West to Feet: @Model.Burial.BurialWestToFeet</p>
+                            <p>South to Head: @Model.Burial.BurialSouthToHead</p>
+                            <p>South to Feet: @Model.Burial.BurialSouthToFeet</p>
+                            <p>Burial Depth: @Model.Burial.BurialDepth</p>
+                            <p>Burial Direction: @Model.Burial.BurialDirection</p>
+                            <p>Osteology Notes: @Model.Burial.OsteologyNotes</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" role="tab" id="headingTwo">
+                        <h5 class="mb-0">
+                            <a class="collapsed text-secondary" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Burial Info
+                            </a>
+                        </h5>
+                    </div>
+                    <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+                        <div class="card-body">
+                            <p>Burial Preservation: @Model.Burial.BurialPreservation</p>
+                            <p>Goods: @Model.Burial.Goods</p>
+                            <p>Burial Wrapping: @Model.Burial.BurialWrapping</p>
+                            <p>Burial Adult Child: @Model.Burial.BurialAdultChild</p>
+                            <p>Burial Age Method: @Model.Burial.Burialagemethod</p>
+                            <p>Burial Age at Death: @Model.Burial.Burialageatdeath</p>
+                            <p>Burial Sample Taken: @Model.Burial.Burialsampletaken</p>
+                            <p>Length (M): @Model.Burial.LengthM</p>
+                            <p>Cluster: @Model.Burial.Cluster</p>
+                            <p>Face Bundle: @Model.Burial.FaceBundle</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" role="tab" id="headingThree">
+                        <h5 class="mb-0">
+                            <a class="collapsed text-secondary" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Skull Info</a>
+                        </h5>
+                    </div>
+                    <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
+                        <div class="card-body">
+                            <p>Skull at Magazine: @Model.Burial.SkullAtMagazine</p>
+                            <p>Skull Trauma: @Model.Burial.SkullTrauma</p>
+                            <p>Cribra Orbitalia: @Model.Burial.CribraOrbitala</p>
+                            <p>Porotic Hyperostosis: @Model.Burial.PoroticHyperostosis</p>
+                            <p>Porotic Hyperostosis (LOCATIONS): @Model.Burial.PoroticHyperostosisLocations</p>
+                            <p>Metopic Suture: @Model.Burial.MetopicSuture</p>
+                            <p>Button Osteoma: @Model.Burial.ButtonOsteoma</p>
+                            <p>Temporomandibular Joint Osteoarthritis (TMJ OA): @Model.Burial.TemporalMandibularJointOsteoarthritisTmjOa</p>
+                            <p>Linear Hypoplasia Enamel: @Model.Burial.LinearHypoplasiaEnamel</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" role="tab" id="headingFour">
+                        <h5 class="mb-0">
+                            <a class="collapsed text-secondary" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">Body Info</a>
+                        </h5>
+                    </div>
+                    <div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour">
+                        <div class="card-body">
+                            <p>Length: @Model.Burial.Length</p>
+                            <p>Age Code SINGLE: @Model.Burial.AgeCodeSingle</p>
+                            <p>Body Analysis: @Model.Burial.BodyAnalysis</p>
+                            <p>Postcrania at Magazine: @Model.Burial.PostcraniaAtMagazine</p>
+                            <p>Sex (Skull; 2018): @Model.Burial.SexSkull2018</p>
+                            <p>Age (Skull; 2018): @Model.Burial.AgeSkull2018</p>
+                            <p>Postcrania Trauma: @Model.Burial.PostcraniaTrauma</p>
+                            <p>Gender Code: @Model.Burial.GenderCode</p>
+                            <p>Hair Color Code: @Model.Burial.HairColorCode</p>
+                            <p>Burial Gender Method: @Model.Burial.Burialgendermethod</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="card">
+                    <div class="card-header" role="tab" id="headingFive">
+                        <h5 class="mb-0">
+                            <a class="collapsed text-secondary" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">Dating Info</a>
+                        </h5>
+                    </div>
+                    <div id="collapseFive" class="collapse" role="tabpanel" aria-labelledby="headingFive">
+                        <div class="card-body">
+                            <p>Year on Skull: @Model.Burial.YearOnSkull</p>
+                            <p>Month on Skull: @Model.Burial.MonthOnSkull</p>
+                            <p>Date on Skull: @Model.Burial.DateOnSkull</p>
+                            <p>Year Excavated: @Model.Burial.YearExcav</p>
+                            <p>Month Excavated: @Model.Burial.MonthExcavated</p>
+                            <p>Date Excavated: @Model.Burial.DateExcavated</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" role="tab" id="headingSix">
+                        <h5 class="text-secondary">
+                            <a class="collapsed text-secondary" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">Other Notes</a>
+                        </h5>
+                    </div>
+                    <div id="collapseSix" class="collapse" role="tabpanel" aria-labelledby="headingSix">
+                        <div class="card-body">
+                            <p>Osteology Unknown Comment: @Model.Burial.OsteologyUnknownComment</p>
+                            <p>Initals of Data Entry Expert: @Model.Burial.InitialsOfDataEntryExpert</p>
+                            <p>Initials of Data Entry Checker: @Model.Burial.InitialsOfDataEntryChecker</p>
+                            <p>BYU Sample: @Model.Burial.ByuSample</p>
+                            <p>Rack and Shelf: @Model.Burial.RackAndShelf</p>
+                            <p>TO BE CONFIRMED: @Model.Burial.ToBeConfirmed</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Sidebar Widgets Column -->
+        <div class="col-md-4">
+
+            <!-- Search Widget -->
+            <div class="card mb-4">
+                <h5 class="card-header">Display Images/Files</h5>
+                <div class="card-body">
+                </div>
+            </div>
+
+            <!-- Categories Widget -->
+            <div class="card my-4">
+                <div class="card-body text-center">
+                    <h3>Want To Edit This Record?</h3>
+                </div>
+                <button type="submit" class="btn button1 right btn-Dark" onclick="location.href='@Url.Action("EditMummy", "Home", Model)'">Edit &rarr;</button>
+            </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->

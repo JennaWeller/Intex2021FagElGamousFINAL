@@ -1,0 +1,104 @@
+﻿@{
+    ViewData["Title"] = "Administration";
+}
+@model IEnumerable<AdminViewModel>
+
+
+<div class="container">
+    <main role="main" class="pb-3">
+        <div class="text-center">
+            <h1 class="display-4">Administration</h1>
+
+            <style>
+                .styled-table {
+                    border-collapse: collapse;
+                    margin: 25px 0;
+                    font-size: 0.9em;
+                    font-family: sans-serif;
+                    min-width: 400px;
+                    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+                    width: 100%;
+                }
+
+                    .styled-table tbody tr {
+                        border-bottom: 1px solid #bc9055;
+                    }
+
+                        .styled-table tbody tr:nth-of-type(even) {
+                            background-color: #f3f3f3;
+                        }
+
+                        .styled-table tbody tr:last-of-type {
+                            border-bottom: 2px solid #bc9055;
+                        }
+
+                    .styled-table th,
+                    .styled-table td {
+                        padding: 12px 15px;
+                    }
+
+                    .styled-table thead tr {
+                        background-color: #bc9055;
+                        color: #ffffff;
+                        text-align: left;
+                    }
+            </style>
+
+            <table class="styled-table">
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th>Edit</th>
+                        <th>Edit</th>
+                        <th>Remove</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var avm in Model)
+                    {
+                    <tr>
+                        <td>@avm.FirstName</td>
+                        <td>@avm.LastName</td>
+                        <td>@avm.Email</td>
+                        <td>@avm.Role</td>
+                        @if (avm.Role == "Admin")
+                        {
+                            <td>
+                                <button class="btn btn-info" onclick="location.href='@Url.Action("ChangeRoleNone", "Home", avm)'">Change to None</button>
+                            </td>
+                            <td>
+                                <button class="btn btn-info" onclick="location.href='@Url.Action("ChangeRoleResearcher", "Home", avm)'">Change to Researcher</button>
+                            </td>
+                        }
+                        else if (avm.Role == "Researcher")
+                        {
+                            <td>
+                                <button class="btn btn-info" onclick="location.href='@Url.Action("ChangeRoleNone", "Home", avm)'">Change to None</button>
+                            </td>
+                            <td>
+                                <button class="btn btn-info" onclick="location.href='@Url.Action("ChangeRoleAdmin", "Home", avm)'">Change to Admin</button>
+                            </td>
+                        }
+                        else
+                        {
+                            <td>
+                                <button class="btn btn-info" onclick="location.href='@Url.Action("ChangeRoleResearcher", "Home", avm)'">Change to Researcher</button>
+                            </td>
+                            <td>
+                                <button class="btn btn-info" onclick="location.href='@Url.Action("ChangeRoleAdmin", "Home", avm)'">Change to Admin</button>
+                            </td>
+                        }
+                        <td>
+                            <button class="btn btn-dark" onclick="location.href='@Url.Action("RemoveUser", "Home", avm)'">Remove</button>
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </main>
+</div>

@@ -1,0 +1,866 @@
+﻿
+@model AddMummyViewModel
+<!-- Page Content -->
+<header>
+    @*<link href="~/css/form.css" rel="stylesheet" />*@
+</header>
+<div class="container">
+    <!-- Page Heading/Breadcrumbs -->
+    <h1 style="text-align: left">
+        Burials
+    </h1>
+    <h4>Add a new burial</h4>
+    <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-6">
+            <form class="form" asp-action="AddBurial" method="post">
+
+                <!-- NS -->
+                <div>
+                    <label asp-for="NS">N/S:</label>
+                    <input asp-for="NS" value="N" type="radio" /><span>N</span>
+                    <input asp-for="NS" value="S" type="radio" /><span>S</span>
+                </div>
+
+                <!-- NS Top -->
+                <div>
+                    <label asp-for="Nstop">N/S Coordinates:</label>
+                    <select asp-for="Nstop">
+
+                        <option value="0">0/10</option>
+                        <option value="10">10/20</option>
+                        <option value="20">20/30</option>
+                        <option value="30">30/40</option>
+                        <option value="40">40/50</option>
+                        <option value="50">50/60</option>
+                        <option value="60">60/70</option>
+                        <option value="70">70/80</option>
+                        <option value="80">80/90</option>
+                        <option value="90">90/100</option>
+                        <option value="100">100/110</option>
+                        <option value="110">110/120</option>
+                        <option value="120">120/130</option>
+                        <option value="130">130/140</option>
+                        <option value="140">140/150</option>
+                        <option value="150">150/160</option>
+                        <option value="160">160/170</option>
+                        <option value="170">170/180</option>
+                        <option value="180">180/190</option>
+                        <option value="190">190/200</option>
+                        <option value="200">200/210</option>
+                        <option value="-42" selected>Select</option>
+                    </select>
+                </div>
+
+                <!-- EW -->
+                <div>
+                    <label asp-for="EW">E/W:</label>
+                    <input asp-for="EW" value="E" type="radio" /><span>E</span>
+                    <input asp-for="EW" value="W" type="radio" /><span>W</span>
+                </div>
+
+                <!-- EW Top -->
+                <div>
+                    <label asp-for="Ewtop">E/W Coordinates:</label>
+                    <select asp-for="Ewtop">
+                        <option value="0">0/10</option>
+                        <option value="10">10/20</option>
+                        <option value="20">20/30</option>
+                        <option value="30">30/40</option>
+                        <option value="40">40/50</option>
+                        <option value="50">50/60</option>
+                        <option value="60">60/70</option>
+                        <option value="70">70/80</option>
+                        <option value="80">80/90</option>
+                        <option value="90">90/100</option>
+                        <option value="100">100/110</option>
+                        <option value="110">110/120</option>
+                        <option value="120">120/130</option>
+                        <option value="130">130/140</option>
+                        <option value="140">140/150</option>
+                        <option value="150">150/160</option>
+                        <option value="160">160/170</option>
+                        <option value="170">170/180</option>
+                        <option value="180">180/190</option>
+                        <option value="190">190/200</option>
+                        <option value="200">200/210</option>
+                        <option value="-42" selected>Select</option>
+                    </select>
+                </div>
+
+                <!-- Quadrant -->
+                <div>
+                    <label asp-for="Quadrant">Quadrant:</label>
+                    <select asp-for="Quadrant">
+                        <option value="All" selected>All</option>
+                        <option value="NE">NE</option>
+                        <option value="NW">NW</option>
+                        <option value="SE">SE</option>
+                        <option value="SW">SW</option>
+                    </select>
+                </div>
+
+                <!--Burial Number -->
+                <div class="form-group">
+                    <label asp-for="BurialNumber">Burial Number:</label>
+                    <input class="form-control" required asp-for="BurialNumber" />
+                </div>
+
+                <!--South to Head-->
+                <div class="form-group">
+                    <label asp-for="Burialsouthtohead">South to Head:</label>
+                    <input class="form-control" required asp-for="Burialsouthtohead" />
+                </div>
+
+                <!--South to Feet-->
+                <div class="form-group">
+                    <label asp-for="Burialsouthtofeet">South to Feet:</label>
+                    <input class="form-control" required asp-for="Burialsouthtofeet" />
+                </div>
+
+                <!--Burial West to Head-->
+                <div class="form-group">
+                    <label asp-for="Burialwesttohead">West to Head:</label>
+                    <input class="form-control" required asp-for="Burialwesttohead" />
+                </div>
+
+                <!--Burial West to Feet-->
+                <div class="form-group">
+                    <label asp-for="Burialwesttofeet">West to Feet:</label>
+                    <input class="form-control" required asp-for="Burialwesttofeet" />
+                </div>
+
+                <!--Length-->
+                <div class="form-group">
+                    <label asp-for="Length">Length:</label>
+                    <input class="form-control" required asp-for="Length" />
+                </div>
+
+                <!--Burial Depth-->
+                <div class="form-group">
+                    <label asp-for="Burialdepth"> Burial Depth:</label>
+                    <input class="form-control" required asp-for="Burialdepth" />
+                </div>
+
+                <!-- Goods -->
+                <div>
+                    <label>Goods:</label>
+                    <select asp-for="Goods">
+                        <option value="N" selected>No</option>
+                        <option value="U">Unknown</option>
+                        <option value="Y">Yes</option>
+                    </select>
+                </div>
+
+                <!--Year excav-->
+                <div class="form-group">
+                    <h5>Year Excavated:</h5>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <!--Yearexcav-->
+                            <select asp-for="Yearexcav">
+                                <option>- Year -</option>
+                                <option value="2020">2020</option>
+                                <option value="2019">2019</option>
+                                <option value="2018">2018</option>
+                                <option value="2017">2017</option>
+                                <option value="2016">2016</option>
+                                <option value="2015">2015</option>
+                                <option value="2014">2014</option>
+                                <option value="2013">2013</option>
+                                <option value="2012">2012</option>
+                                <option value="2011">2011</option>
+                                <option value="2010">2010</option>
+                                <option value="2009">2009</option>
+                                <option value="2008">2008</option>
+                                <option value="2007">2007</option>
+                                <option value="2006">2006</option>
+                                <option value="2005">2005</option>
+                                <option value="2004">2004</option>
+                                <option value="2003">2003</option>
+                                <option value="2002">2002</option>
+                                <option value="2001">2001</option>
+                                <option value="2000">2000</option>
+                                <option value="1999">1999</option>
+                                <option value="1998">1998</option>
+                                <option value="1997">1997</option>
+                                <option value="1996">1996</option>
+                                <option value="1995">1995</option>
+                                <option value="1994">1994</option>
+                                <option value="1993">1993</option>
+                                <option value="1992">1992</option>
+                                <option value="1991">1991</option>
+                                <option value="1990">1990</option>
+                                <option value="1989">1989</option>
+                                <option value="1988">1988</option>
+                                <option value="1987">1987</option>
+                                <option value="1986">1986</option>
+                                <option value="1985">1985</option>
+                                <option value="1984">1984</option>
+                                <option value="1983">1983</option>
+                                <option value="1982">1982</option>
+                                <option value="1981">1981</option>
+                                <option value="1980">1980</option>
+                                <option value="1979">1979</option>
+                                <option value="1978">1978</option>
+                                <option value="1977">1977</option>
+                                <option value="1976">1976</option>
+                                <option value="1975">1975</option>
+                                <option value="1974">1974</option>
+                                <option value="1973">1973</option>
+                                <option value="1972">1972</option>
+                                <option value="1971">1971</option>
+                                <option value="1970">1970</option>
+                                <option value="1969">1969</option>
+                                <option value="1968">1968</option>
+                                <option value="1967">1967</option>
+                                <option value="1966">1966</option>
+                                <option value="1965">1965</option>
+                                <option value="1964">1964</option>
+                                <option value="1963">1963</option>
+                                <option value="1962">1962</option>
+                                <option value="1961">1961</option>
+                                <option value="1960">1960</option>
+                                <option value="1959">1959</option>
+                                <option value="1958">1958</option>
+                                <option value="1957">1957</option>
+                                <option value="1956">1956</option>
+                                <option value="1955">1955</option>
+                                <option value="1954">1954</option>
+                                <option value="1953">1953</option>
+                                <option value="1952">1952</option>
+                                <option value="1951">1951</option>
+                                <option value="1950">1950</option>
+                                <option value="1949">1949</option>
+                                <option value="1948">1948</option>
+                                <option value="1947">1947</option>
+                                <option value="1946">1946</option>
+                                <option value="1945">1945</option>
+                                <option value="1944">1944</option>
+                                <option value="1943">1943</option>
+                                <option value="1942">1942</option>
+                                <option value="1941">1941</option>
+                                <option value="1940">1940</option>
+                                <option value="1939">1939</option>
+                                <option value="1938">1938</option>
+                                <option value="1937">1937</option>
+                                <option value="1936">1936</option>
+                                <option value="1935">1935</option>
+                                <option value="1934">1934</option>
+                                <option value="1933">1933</option>
+                                <option value="1932">1932</option>
+                                <option value="1931">1931</option>
+                                <option value="1930">1930</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <!--MonthExcavated-->
+
+                            <select asp-for="MonthExcavated">
+                                <option>- Month -</option>
+                                <option value="January">January</option>
+                                <option value="Febuary">Febuary</option>
+                                <option value="March">March</option>
+                                <option value="April">April</option>
+                                <option value="May">May</option>
+                                <option value="June">June</option>
+                                <option value="July">July</option>
+                                <option value="August">August</option>
+                                <option value="September">September</option>
+                                <option value="October">October</option>
+                                <option value="November">November</option>
+                                <option value="December">December</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+
+                            <select asp-for="DateExcavated">
+                                <option>- Day -</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                                <option value="24">24</option>
+                                <option value="25">25</option>
+                                <option value="26">26</option>
+                                <option value="27">27</option>
+                                <option value="28">28</option>
+                                <option value="29">29</option>
+                                <option value="30">30</option>
+                                <option value="31">31</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Burial Preservation-->
+                <div class="select-box">
+                    <label asp-for="Burialpreservation" class="label"><span class="label-desc">Burial Preservation</span> </label>
+                    <select class="select" asp-for="Burialpreservation">
+                        <option value="WW">Full or nearly full wrapping remains</option>
+                        <option value="S">Well-Wrapped</option>
+                        <option value="B">Badly Preserved</option>
+                        <option value="D">Partial wrapping remain</option>
+                        <option value="BP">Bones and/or only partial remnants of wrapping remains</option>
+                        <option value="H">Unknown</option>
+                        <option value="SB">Bones and Skull</option>
+                        <option value="BK"> Only Skull</option>
+                    </select>
+                </div>
+
+                <!--Burial Wrapping-->
+                <div class="select-box">
+                    <label asp-for="Burialwrapping" class="label select-box1"><span class="label-desc">Burial Wrapping</span> </label>
+                    <select class="select" asp-for="Burialwrapping">
+                        <option value="W">Full or nearly full wrapping remains</option>
+                        <option value="WW">Well-Wrapped</option>
+                        <option value="BP">Badly Preserved</option>
+                        <option value="H">Partial wrapping remain</option>
+                        <option value="B">Bones and/or only partial remnants of wrapping remains</option>
+                        <option value="U">Unknown</option>
+                        <option value="SB">Bones and Skull</option>
+                        <option value="BK">Basket</option>
+                        <option value="S">Only Skull</option>
+                    </select>
+                </div>
+
+                <!--Burial Adult Child-->
+                <div class="select-box">
+                    <label asp-for="Burialadultchild" class="label select-box1"><span class="label-desc">Burial Adult Child</span> </label>
+                    <select class="select" asp-for="Burialadultchild">
+                        <option value="A">Adult</option>
+                        <option value="C">Any non adult including infant, child, juvenile, fetus</option>
+                    </select>
+                </div>
+
+                <!--Burial Gender Method-->
+                <div class="select-box">
+                    <label asp-for="Burialgendermethod" class="label select-box1"><span class="label-desc">Burial Gender Method</span> </label>
+                    <select class="select" asp-for="Burialgendermethod">
+                        <option value="S">Skull</option>
+                        <option value="P">Pelvis</option>
+                        <option value="U">Unknown- gender may not be recorded/children gender is usually indeterminate or unknown</option>
+                    </select>
+                </div>
+
+                <!--Age Code Single-->
+                <div class="select-box">
+                    <label asp-for="AgeCodeSingle" class="label select-box1"><span class="label-desc">Age Code Single</span> </label>
+                    <select class="select" asp-for="AgeCodeSingle">
+                        <option value="A">Adult - year 15+</option>
+                        <option value="C">Child - years 3-15</option>
+                        <option value="I">Infant - years 1-3</option>
+                        <option value="N">Newborn - year 0-1</option>
+                        <option value="U">Unknown</option>
+                    </select>
+                </div>
+                <!--double check meaning of abbrev-->
+                <div class="select-box">
+                    <label asp-for="BurialDirection" class="label select-box1"><span class="label-desc">Burial Direction</span> </label>
+                    <select class="select" asp-for="BurialDirection">
+                        <option value="U">Unknown</option>
+                        <option value="E">East</option>
+                        <option value="W">West</option>
+                    </select>
+                </div>
+
+                <!--Burial Age at death-->
+                <div class="form-group">
+                    <label asp-for="Burialageatdeath">Burial Age at Death:</label>
+                    <input class="form-control" required asp-for="Burialageatdeath" />
+                </div>
+                <!--Burial age method-->
+                <div class="form-group">
+                    <label asp-for="Burialagemethod">Burial Age Method:</label>
+                    <input class="form-control" required asp-for="Burialagemethod" />
+                </div>
+                <!--Hair color code -->
+                <div class="select-box">
+                    <label asp-for="HairColorCode" class="label select-box1"><span class="label-desc"></span> Hair Color Code:</label>
+                    <select class="select" asp-for="HairColorCode">
+                        <option value="A">Adult - year 15+</option>
+                        <option value="C">Child - years 3-15</option>
+                        <option value="I">Infant - years 1-3</option>
+                        <option value="N">Newborn - year 0-1</option>
+                        <option value="U">Unknown</option>
+                    </select>
+                </div>
+
+                <!--Burial sample taken-->
+                <div class="form-group">
+                    <label asp-for="Burialsampletaken"><span>Burial sample taken: &emsp;</span></label>
+                    <input asp-for="Burialsampletaken" value="Y" type="radio" /><span>Yes </span>
+                    <input asp-for="Burialsampletaken" value="N" type="radio" checked /><span>No </span>
+                    <input asp-for="Burialsampletaken" value="U" type="radio" /><span>Unknown </span>
+                </div>
+
+                <!--Length-->
+                <div class="form-group">
+                    <label asp-for="LengthM">LengthM:</label>
+                    <input class="form-control" required asp-for="LengthM" />
+                </div>
+
+                <!--Cluster-->
+                <div class="form-group">
+                    <label asp-for="Cluster">Cluster:</label>
+                    <input class="form-control" required asp-for="Cluster" />
+                </div>
+
+                <!--Face Bundle-->
+                <div class="form-group">
+                    <label asp-for="FaceBundle"><span>Face Bundle: &emsp;</span></label>
+                    <input asp-for="FaceBundle" value="Y" type="radio" /><span>Yes </span>
+                    <input asp-for="FaceBundle" value="N" type="radio" checked /><span>No </span>
+                    <input asp-for="FaceBundle" value="U" type="radio" /><span>Unknown </span>
+                </div>
+                <!--Osteology Notes-->
+                <label asp-for="OsteologyNotes">Osteology Notes:</label>
+                <textarea asp-for="OsteologyNotes"></textarea>
+                <!-- Add button -->
+                <div class="form-footer">
+                    <button type="submit" class="btn">Add Burial</button>
+                </div>
+                <br />
+                <br />
+                <!-- Upload photo -->
+                <div class="panel">
+                    <div class="button_outer ">
+                        <div class="btn_upload">
+                            <input type="file">
+                            Upload Photo
+                        </div>
+                        <div class="processing_bar"></div>
+                        <div class="success_box"></div>
+                    </div>
+                </div>
+                <div class="error_msg"></div>
+                <div class="uploaded_file_view">
+                    <span class="file_remove">X</span>
+                </div>
+            </form>
+        </div>
+        <!----------------------------------------Start of Second Column ------------------------------------------>
+        <div class="col-lg-6">
+            <!--Skull-->
+            <div class="form-group">
+                <h4>Date On Skull:</h4>
+                <div class="row">
+                    <div class="col-md-3">
+                        <!--Year on skul-->
+                        <select asp-for="Yearonskull">
+                            <option>- Year -</option>
+                            <option value="2020">2020</option>
+                            <option value="2019">2019</option>
+                            <option value="2018">2018</option>
+                            <option value="2017">2017</option>
+                            <option value="2016">2016</option>
+                            <option value="2015">2015</option>
+                            <option value="2014">2014</option>
+                            <option value="2013">2013</option>
+                            <option value="2012">2012</option>
+                            <option value="2011">2011</option>
+                            <option value="2010">2010</option>
+                            <option value="2009">2009</option>
+                            <option value="2008">2008</option>
+                            <option value="2007">2007</option>
+                            <option value="2006">2006</option>
+                            <option value="2005">2005</option>
+                            <option value="2004">2004</option>
+                            <option value="2003">2003</option>
+                            <option value="2002">2002</option>
+                            <option value="2001">2001</option>
+                            <option value="2000">2000</option>
+                            <option value="1999">1999</option>
+                            <option value="1998">1998</option>
+                            <option value="1997">1997</option>
+                            <option value="1996">1996</option>
+                            <option value="1995">1995</option>
+                            <option value="1994">1994</option>
+                            <option value="1993">1993</option>
+                            <option value="1992">1992</option>
+                            <option value="1991">1991</option>
+                            <option value="1990">1990</option>
+                            <option value="1989">1989</option>
+                            <option value="1988">1988</option>
+                            <option value="1987">1987</option>
+                            <option value="1986">1986</option>
+                            <option value="1985">1985</option>
+                            <option value="1984">1984</option>
+                            <option value="1983">1983</option>
+                            <option value="1982">1982</option>
+                            <option value="1981">1981</option>
+                            <option value="1980">1980</option>
+                            <option value="1979">1979</option>
+                            <option value="1978">1978</option>
+                            <option value="1977">1977</option>
+                            <option value="1976">1976</option>
+                            <option value="1975">1975</option>
+                            <option value="1974">1974</option>
+                            <option value="1973">1973</option>
+                            <option value="1972">1972</option>
+                            <option value="1971">1971</option>
+                            <option value="1970">1970</option>
+                            <option value="1969">1969</option>
+                            <option value="1968">1968</option>
+                            <option value="1967">1967</option>
+                            <option value="1966">1966</option>
+                            <option value="1965">1965</option>
+                            <option value="1964">1964</option>
+                            <option value="1963">1963</option>
+                            <option value="1962">1962</option>
+                            <option value="1961">1961</option>
+                            <option value="1960">1960</option>
+                            <option value="1959">1959</option>
+                            <option value="1958">1958</option>
+                            <option value="1957">1957</option>
+                            <option value="1956">1956</option>
+                            <option value="1955">1955</option>
+                            <option value="1954">1954</option>
+                            <option value="1953">1953</option>
+                            <option value="1952">1952</option>
+                            <option value="1951">1951</option>
+                            <option value="1950">1950</option>
+                            <option value="1949">1949</option>
+                            <option value="1948">1948</option>
+                            <option value="1947">1947</option>
+                            <option value="1946">1946</option>
+                            <option value="1945">1945</option>
+                            <option value="1944">1944</option>
+                            <option value="1943">1943</option>
+                            <option value="1942">1942</option>
+                            <option value="1941">1941</option>
+                            <option value="1940">1940</option>
+                            <option value="1939">1939</option>
+                            <option value="1938">1938</option>
+                            <option value="1937">1937</option>
+                            <option value="1936">1936</option>
+                            <option value="1935">1935</option>
+                            <option value="1934">1934</option>
+                            <option value="1933">1933</option>
+                            <option value="1932">1932</option>
+                            <option value="1931">1931</option>
+                            <option value="1930">1930</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <!--Month on skill-->
+                        <select asp-for="Monthonskull">
+                            <option>- Month -</option>
+                            <option value="January">January</option>
+                            <option value="Febuary">Febuary</option>
+                            <option value="March">March</option>
+                            <option value="April">April</option>
+                            <option value="May">May</option>
+                            <option value="June">June</option>
+                            <option value="July">July</option>
+                            <option value="August">August</option>
+                            <option value="September">September</option>
+                            <option value="October">October</option>
+                            <option value="November">November</option>
+                            <option value="December">December</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <select asp-for="DateonSkull">
+                            <option>- Day -</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                            <option value="24">24</option>
+                            <option value="25">25</option>
+                            <option value="26">26</option>
+                            <option value="27">27</option>
+                            <option value="28">28</option>
+                            <option value="29">29</option>
+                            <option value="30">30</option>
+                            <option value="31">31</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <!--Initials of Data Entry Expert-->
+                <div class="col-md-6">
+                    <h6>Initials of Data Entry Expert:</h6>
+                    <br />
+                    <h6>Initials of Data Entry Checker:</h6>
+                </div>
+                <!--Initials of Data Entry Checker-->
+                <div class="col-md-3">
+                    <input class="form-control" required asp-for="InitialsofDataEntryExpert" />
+                    <br />
+                    <input class="form-control" required asp-for="InitialsofDataEntryChecker" />
+                </div>
+            </div>
+
+
+            @*Byusample*@
+            <div>
+                <label>BYU Sampled:</label>
+                <select asp-for="Byusample">
+                    <option value="Y">Yes</option>
+                    <option value="N">No/Unknown</option>
+                </select>
+            </div>
+
+       
+                <div class="row">
+                    <!--Body Analysis-->
+                    <div>
+                        <label>Body Analysis:</label>
+                        <select asp-for="BodyAnalysis">
+                            <option>- Year -</option>
+                            <option value="2021">2021</option>
+                            <option value="2020">2020</option>
+                            <option value="2019">2019</option>
+                            <option value="2018">2018</option>
+                            <option value="2017">2017</option>
+                            <option value="2016">2016</option>
+                            <option value="2015">2015</option>
+                            <option value="2014">2014</option>
+                            <option value="2013">2013</option>
+                            <option value="2012">2012</option>
+                            <option value="2011">2011</option>
+                            <option value="2010">2010</option>
+                            <option value="2009">2009</option>
+                            <option value="2008">2008</option>
+                            <option value="2007">2007</option>
+                            <option value="2006">2006</option>
+                            <option value="2005">2005</option>
+                            <option value="2004">2004</option>
+                            <option value="2003">2003</option>
+                            <option value="2002">2002</option>
+                            <option value="2001">2001</option>
+                            <option value="2000">2000</option>
+                            <option value="1999">1999</option>
+                            <option value="1998">1998</option>
+                            <option value="1997">1997</option>
+                            <option value="1996">1996</option>
+                            <option value="1995">1995</option>
+                            <option value="1994">1994</option>
+                            <option value="1993">1993</option>
+                            <option value="1992">1992</option>
+                            <option value="1991">1991</option>
+                            <option value="1990">1990</option>
+                            <option value="1989">1989</option>
+                            <option value="1988">1988</option>
+                            <option value="1987">1987</option>
+                            <option value="1986">1986</option>
+                            <option value="1985">1985</option>
+                            <option value="1984">1984</option>
+                            <option value="1983">1983</option>
+                            <option value="1982">1982</option>
+                            <option value="1981">1981</option>
+                            <option value="1980">1980</option>
+                            <option value="1979">1979</option>
+                            <option value="1978">1978</option>
+                            <option value="1977">1977</option>
+                            <option value="1976">1976</option>
+                            <option value="1975">1975</option>
+                            <option value="1974">1974</option>
+                            <option value="1973">1973</option>
+                            <option value="1972">1972</option>
+                            <option value="1971">1971</option>
+                            <option value="1970">1970</option>
+                            <option value="1969">1969</option>
+                            <option value="1968">1968</option>
+                            <option value="1967">1967</option>
+                            <option value="1966">1966</option>
+                            <option value="1965">1965</option>
+                            <option value="1964">1964</option>
+                            <option value="1963">1963</option>
+                            <option value="1962">1962</option>
+                            <option value="1961">1961</option>
+                            <option value="1960">1960</option>
+                            <option value="1959">1959</option>
+                            <option value="1958">1958</option>
+                            <option value="1957">1957</option>
+                            <option value="1956">1956</option>
+                            <option value="1955">1955</option>
+                            <option value="1954">1954</option>
+                            <option value="1953">1953</option>
+                            <option value="1952">1952</option>
+                            <option value="1951">1951</option>
+                            <option value="1950">1950</option>
+                            <option value="1949">1949</option>
+                            <option value="1948">1948</option>
+                            <option value="1947">1947</option>
+                            <option value="1946">1946</option>
+                            <option value="1945">1945</option>
+                            <option value="1944">1944</option>
+                            <option value="1943">1943</option>
+                            <option value="1942">1942</option>
+                            <option value="1941">1941</option>
+                            <option value="1940">1940</option>
+                            <option value="1939">1939</option>
+                            <option value="1938">1938</option>
+                            <option value="1937">1937</option>
+                            <option value="1936">1936</option>
+                            <option value="1935">1935</option>
+                            <option value="1934">1934</option>
+                            <option value="1933">1933</option>
+                            <option value="1932">1932</option>
+                            <option value="1931">1931</option>
+                            <option value="1930">1930</option>
+                        </select>
+                    </div>
+                    <!--AgeSkull2018-->
+                    <div>
+                        <label>Age Of Skull:</label>
+                        <select asp-for="AgeSkull2018">
+                            <option>- Age: -</option>
+                            <option value="18-25">18-25</option>
+                            <option value="25-35">25-35</option>
+                            <option value="35-45">35-45</option>
+                            <option value="45-55">45-55</option>
+                            <option value="55+">55+</option>
+                            <option value="Unknown">Unknown</option>
+                            <option value="SUBADULT">Child</option>
+                            <option value="ADULT">Adult</option>
+                        </select>
+                    </div>
+                    <!--RackandShelf-->
+                    <fieldset class="form-fieldset ui-input __first funkay">
+                        <label asp-for="RackandShelf">
+                            <span>Rack and Shelf</span>
+                        </label>
+                        <input asp-for="RackandShelf" type="text" tabindex="0" placeholder="2C.10" />
+                    </fieldset>
+
+                    <!--Skull at Magazine -->
+                    <div class="form-group">
+                        <label asp-for="SkullatMagazine"><span>Skull At Magazine?&emsp;</span></label>
+                        <input asp-for="SkullatMagazine" value="Y" type="radio" /><span>Yes</span>
+                        <input asp-for="SkullatMagazine" value="N" type="radio" /><span>No</span>
+                        <input asp-for="SkullatMagazine" value="U" type="radio" checked /><span>Unknown</span>
+                    </div>
+
+                    @*skull at magazine*@
+                    <div>
+                        <label>Skull at Magazine:</label>
+                        <select asp-for="SkullatMagazine">
+                            <option value="N" selected>No</option>
+                            <option value="Y">Yes</option>
+                            <option value="U">Unknown</option>
+                        </select>
+                    </div>
+                    <!--Postcrania at Magazine -->
+                    <div class="form-group">
+                        <label asp-for="PostcraniaatMagazine"><span>Postcrania at Magazine?&emsp;</span></label>
+                        <input asp-for="PostcraniaatMagazine" value="Y" type="radio" /><span>Yes</span>
+                        <input asp-for="PostcraniaatMagazine" value="N" type="radio" /><span>No</span>
+                        <input asp-for="PostcraniaatMagazine" value="U" type="radio" checked /><span>Unknown</span>
+                    </div>
+                    <!--SexSkull2018 -->
+                    <div class="form-group">
+                        <label asp-for="SexSkull2018"><span>Gender?&emsp;</span></label>
+                        <input asp-for="SexSkull2018" value="F" type="radio" /><span>Female</span>
+                        <input asp-for="SexSkull2018" value="M" type="radio" /><span>Male</span>
+                        <input asp-for="SexSkull2018" value="U" type="radio" checked /><span>Unknown</span>
+                    </div>
+
+                    <!--To Be Confirmed-->
+                    <div class="form-group">
+                        <label asp-for="Tobeconfirmed"><span>To Be Confirmed: &emsp;</span></label>
+                        <input asp-for="Tobeconfirmed" value="Y" type="radio" /><span>Yes </span>
+                        <input asp-for="Tobeconfirmed" value="N" type="radio" /><span>No </span>
+                        <input asp-for="Tobeconfirmed" value="U" type="radio" checked /><span>Unknown </span>
+                    </div>
+                    <!--SkullTrauma-->
+                    <div class="form-group">
+                        <label asp-for="SkullTrauma"><span>Skull Trauma: &emsp;</span></label>
+                        <input asp-for="SkullTrauma" value="Y" type="radio" /><span>Yes </span>
+                        <input asp-for="SkullTrauma" value="N" type="radio" checked /><span>No </span>
+                        <input asp-for="SkullTrauma" value="U" type="radio" /><span>Unknown </span>
+                    </div>
+                    <!--PostcraniaTrauma-->
+                    <div class="form-group">
+                        <label asp-for="PostcraniaTrauma"><span>Postcrania Trauma: &emsp;</span></label>
+                        <input asp-for="PostcraniaTrauma" value="Y" type="radio" /><span>Yes </span>
+                        <input asp-for="PostcraniaTrauma" value="N" type="radio" checked /><span>No </span>
+                        <input asp-for="PostcraniaTrauma" value="U" type="radio" /><span>Unknown </span>
+                    </div>
+                    <!--CribraOrbitala-->
+                    <div class="form-group">
+                        <label asp-for="CribraOrbitala"><span>Cribra Orbitala: &emsp;</span></label>
+                        <input asp-for="CribraOrbitala" value="Y" type="radio" /><span>Yes </span>
+                        <input asp-for="CribraOrbitala" value="N" type="radio" checked /><span>No </span>
+                        <input asp-for="CribraOrbitala" value="U" type="radio" /><span>Unknown </span>
+                    </div>
+                    <!--PoroticHyperostosis-->
+                    <div class="form-group">
+                        <label asp-for="PoroticHyperostosis"><span>Porotic Hyperostosis: &emsp;</span></label>
+                        <input asp-for="PoroticHyperostosis" value="Y" type="radio" /><span>Yes </span>
+                        <input asp-for="PoroticHyperostosis" value="N" type="radio" checked /><span>No </span>
+                        <input asp-for="PoroticHyperostosis" value="U" type="radio" /><span>Unknown </span>
+                    </div>
+                    <!--PoroticHyperostosisLocations-->
+                    <div class="form-group">
+                        <label asp-for="PoroticHyperostosisLocations"><span>Porotic Hyperostosis Locations: &emsp;</span></label>
+                        <input asp-for="PoroticHyperostosisLocations" value="B" type="radio" /><span>B</span>
+                        <input asp-for="PoroticHyperostosisLocations" value="B M" type="radio" checked /><span>B M</span>
+                        <input asp-for="PoroticHyperostosisLocations" value="M" type="radio" /><span>M</span>
+                        <input asp-for="PoroticHyperostosisLocations" value="M B" type="radio" /><span>M B</span>
+                    </div>
+                    <!--MetopicSuture-->
+                    <div class="form-group">
+                        <label asp-for="MetopicSuture"><span>Metopic Suture: &emsp;</span></label>
+                        <input asp-for="MetopicSuture" value="Y" type="radio" /><span>Yes </span>
+                        <input asp-for="MetopicSuture" value="N" type="radio" checked /><span>No </span>
+                        <input asp-for="MetopicSuture" value="U" type="radio" /><span>Unknown </span>
+                    </div>
+                    <!--ButtonOsteoma-->
+                    <div class="form-group">
+                        <label asp-for="ButtonOsteoma"><span>Button Osteoma: &emsp;</span></label>
+                        <input asp-for="ButtonOsteoma" value="Y" type="radio" /><span>Yes </span>
+                        <input asp-for="ButtonOsteoma" value="N" type="radio" checked /><span>No </span>
+                        <input asp-for="ButtonOsteoma" value="U" type="radio" /><span>Unknown </span>
+                    </div>
+                </div>
+                <!-- End of Right Column -->
+                <br>
+            </div>
+        </div>
+    </div>
+
+
+

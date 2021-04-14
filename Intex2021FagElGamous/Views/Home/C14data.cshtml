@@ -1,0 +1,99 @@
+﻿@{
+    ViewData["Title"] = "C14 Data";
+}
+
+@model Intex2021FagElGamous.Models.C14datum
+<div class="container">
+
+    <!-- Page Heading/Breadcrumbs -->
+    <h1>
+        C14 Data
+    </h1>
+
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item breadcrumbcolor">
+
+        </li>
+
+    </ol>
+    @*
+
+
+        public string Category { get; set; }
+    *@
+    <div class="form-group">
+        <form asp-action="C14data" method="post">
+            <div class="form-group">
+                <label asp-for="Burial">Burial Number:</label>
+                <input class="form-control" required asp-for="Burial" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Rack">Rack:</label>
+                <input asp-for="Rack" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Tubenum">Tube:</label>
+                <input class="Tube" required asp-for="Tubenum" />
+            </div>
+            <label asp-for="Description">Description:</label>
+            <textarea asp-for="Description"></textarea>
+            <div class="form-group">
+                <label asp-for="SizeMl">Size (m):</label>
+                <input asp-for="SizeMl" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Foci">Foci:</label>
+                <input asp-for="Foci" />
+            </div>
+            <div class="form-group">
+                <label asp-for="C14Sample2017">C14 Sample 2017:</label>
+                <input class="form-control" required asp-for="C14Sample2017" />
+            </div>
+            <div class="form-group">
+                <label asp-for="LocationNotes">Location:</label>
+                <input class="form-control" required asp-for="LocationNotes" />
+            </div>
+            <div class="form-group">
+                <label asp-for="QuestionS">Question(s):</label>
+                <input class="form-control" required asp-for="QuestionS" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Conventional14cAgeBp">Conventional 14 Cage Bp:</label>
+                <input asp-for="Conventional14cAgeBp" />
+            </div>
+            <div class="form-group">
+                <label asp-for="_14cCalendarDate"> 14C Calendar Date :</label>
+                <input asp-for="_14cCalendarDate" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Calibrated95CalendarDateMax"> Calibrated 95 Calendar Date Max :</label>
+                <input asp-for="Calibrated95CalendarDateMax" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Calibrated95CalendarDateMax"> Calibrated 95 Calendar Date Max  :</label>
+                <input asp-for="Calibrated95CalendarDateMax" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Calibrated95CalendarDateMin">Calibrated 95 Calendar Date Min  :</label>
+                <input asp-for="Calibrated95CalendarDateMin" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Calibrated95CalendarDateSpan"> Calibrated 95 Calendar Date Span  :</label>
+                <input asp-for="Calibrated95CalendarDateSpan" />
+            </div>
+            <div class="form-group">
+                <label asp-for=" Calibrated95CalendarDateAvg"> Calibrated 95 Calendar Date Avg :</label>
+                <input asp-for=" Calibrated95CalendarDateAvg" />
+            </div>
+            <div class="form-group">
+                <label asp-for=" Category"> Category  :</label>
+                <input asp-for=" Category" />
+            </div>
+            <label asp-for="Notes">Notes:</label>
+            <textarea asp-for="Notes"></textarea>
+
+            <button type="submit" class="btn btn-dark"> Submit </button>
+        </form>
+    </div>
+</div>

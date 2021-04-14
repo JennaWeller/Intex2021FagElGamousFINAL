@@ -1,0 +1,102 @@
+﻿@{ ViewData["Title"] = "Home Page"; }
+
+<div class="container">
+    <div id="carouselExampleIndicators" class="carousel slide">
+        <div class="carousel-inner" role="listbox">
+            <!-- Slide One - Set the background image for this slide in the line below -->
+            <div class="carousel-item active" style="background-image: url('https://images.unsplash.com/photo-1592488831514-7eccdf7c35a2?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1952&q=80') ">
+                <div class="carousel-caption d-none d-md-block">
+                    <form asp-action="ViewBurials" method="get">
+                        <h1>Welcome to BYU Excavations</h1>
+                        <button class="btn btn-lg btn-dark">
+                            View Burials
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+
+    <!-- /.row -->
+    <div class="row">
+        <div class="col-lg-6">
+            <h2>Fag el-Gamous</h2>
+            <p> A brief introduction about BYU Egypt Excavations: </p>
+            <p>
+                Fag el-Gamous (which means Way of the Water Buffalo) is a large and important cemetery in Egypt that has been under archeological investigation (primarily by BYU researchers) for over 25 years. The excavation has garnered international attention because of the interesting insights gained by studying the Fag el-Gamous mummies. Detailed background information on this site can be found in the academic article “Rethinking burial dates at a Graeco-Roman Cemetery: Fag el-Gamous, Fayoum, Egypt.”
+
+
+
+                During multiple years of study, researchers have excavated more than 1,000 mummies and collected data in field notes, spreadsheets, and simple databases about each mummy’s location, physical orientation in the ground, burial depth, hair color, wrapping (including information about the textiles used), gender, age, bone (including skull and teeth) dimensions, items accompanying the mummy, and more. And, of course, there are many, many photographs. Offsite, researchers have performed a variety of analyses on the items excavated including carbon dating, DNA sequencing, and others.
+
+
+
+            </p>
+        </div>
+        <div class="col-lg-6">
+            <br />
+            <br />
+            <br />
+            <img class="img-fluid rounded" src="~/img/DSC_0007.jpg" />
+        </div>
+    </div>
+    <!-- /.row -->
+    <hr>
+    <a class="btn btn-lg btn-block"><h2 class="text-white">Meet The Team</h2></a>
+    <br />
+    <div class="row">
+        <div class="col-lg-4 col-sm-6 portfolio-item">
+            <div class="card h-100">
+                <a href="https://religion.byu.edu/george_pierce"><img class="card-img-top" src="https://religion.byu.edu/sites/default/files/styles/faculty_directory/public/pictures/picture-458-1468421394.jpg?itok=Fu1N19us" alt=""></a>
+                <div class="card-body">
+                    <h4 class="card-title">
+                        George Pierce
+                    </h4>
+                    <p>
+                        George A. Pierce, PhD
+                        Assistant Professor of Ancient Scripture. Dr. Pierce received a BA in history, an MSc in archaeological information systems, an MA in biblical studies and a PhD in Near Eastern languages and cultures. He can
+                        read Hebrew and related NW Semitic languages, Akkadian, Greek, Middle Egyptian, German and French. He is currently the lead architect and supervisor of the Geographic Information Systems team for the Tel Shimron
+                        Excavations in the Jezreel Valley, Israel. He has 17 peer reviewed publications and has presented 18 times.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-sm-6 portfolio-item">
+            <div class="card h-100">
+                <a href="https://religion.byu.edu/kerry_muhlestein"><img class="card-img-top" src="https://religion.byu.edu/sites/default/files/styles/faculty_directory/public/pictures/picture-57-1307140119.jpg?itok=7QHoDosf" alt=""></a>
+                <div class="card-body">
+                    <h4 class="card-title">
+                        Kerry Muhlestein
+                    </h4>
+                    <p>
+                        Professor, Director BYU Egypt Excavation Project. Dr. Muhlestein received his BS in psychology with a Hebrew minor, an MA in ancient Near Eastern studies and a PhD in Egyptology.
+                        He has published seven books and over fifty-five peer-reviewed articles and has done over eighty academic presentations. He has served as the chairman of a national
+                        committee for the American Research Center in Egypt and currently serves on their Research Supporting Member Council. He has also served on a committe for the Society for the Study of Egyptian Antiquities and currently serves on
+                        their board of trustees and as a vice president of the organization.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-sm-6 portfolio-item">
+            <div class="card h-100">
+                <a href="https://lifesciences.byu.edu/directory/r-paul-evans"><img class="card-img-top" src="https://brightspotcdn.byu.edu/dims4/default/e812dea/2147483647/strip/true/crop/3211x3211+0+0/resize/1200x1200!/quality/90/?url=https%3A%2F%2Fbrigham-young-brightspot.s3.amazonaws.com%2F97%2F68%2F580bb80f4a3e95ae248306fd9a16%2Fr.%20Paul%20Evans.jpg" alt=""></a>
+                <div class="card-body">
+                    <h4 class="card-title">
+                        R Paul Evans
+                    </h4>
+                    <p>
+                        Assistant Professor of Molecular Biology. Dr. Evans received a Ph.D. in Molecular Biology in 1983 and a Bachelor’s degree in Microbiology in 1995. He has worked for BYU for the past 34 years and is currently a member
+                        of the American Association for the Advancement of Science, the Desert Fishes Council, the American Fisheries Society, and the International Society of Biogeography. He has 37 peer reviewed publications, has presented 146
+                        times, and has raised a total of $1,557,194 for various causes.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br />
+    <br />
+    <br />
+</div>

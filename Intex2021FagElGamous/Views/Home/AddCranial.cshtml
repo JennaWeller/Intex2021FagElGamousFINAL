@@ -1,0 +1,95 @@
+﻿@{
+    ViewData["Title"] = "C14 Data";
+}
+@model Intex2021FagElGamous.Models.CranialMain
+<div class="container">
+    <h1>
+       Cranial Main
+    </h1>
+    <form class="form" asp-action="AddCranial" method="post">
+        <div class="form-group">
+            <label asp-for="BurialNumber">Burial Number:</label>
+            <input class="form-control" required asp-for="BurialNumber" />
+        </div>
+        <div class="form-group">
+            <label asp-for="SampleNumber">Sample Number:</label>
+            <input class="form-control" required asp-for="SampleNumber" />
+        </div>
+        <div class="form-group">
+            <label asp-for="SampleNumber">Sample Number:</label>
+            <input class="form-control" required asp-for="SampleNumber" />
+        </div>
+        <div class="form-group">
+            <label asp-for="MaximumCranialLength">Maximum Cranial Length:</label>
+            <input class="form-control" required asp-for="MaximumCranialLength" />
+        </div>
+        <div class="form-group">
+            <label asp-for="MaximumCranialLength">Maximum Cranial Length:</label>
+            <input class="form-control" required asp-for="MaximumCranialLength" />
+        </div>
+        <div class="form-group">
+            <label asp-for=" MaximumCranialBreadth"> Maximum Cranial Breadth:</label>
+            <input class="form-control" required asp-for=" MaximumCranialBreadth" />
+        </div>
+        <div class="form-group">
+            <label asp-for="BasionBregmaHeight"> Basion Bregma Height:</label>
+            <input class="form-control" required asp-for="BasionBregmaHeight" />
+        </div>
+        <div class="form-group">
+            <label asp-for="BasionNasion"> Basion Nasion:</label>
+            <input class="form-control" required asp-for="BasionNasion " />
+        </div>
+        <div class="form-group">
+            <label asp-for="BasionProsthionLength">Basion Prosthion Length:</label>
+            <input class="form-control" required asp-for="BasionProsthionLength" />
+        </div>
+        <div class="form-group">
+            <label asp-for="BasionProsthionLength">Basion Prosthion Length:</label>
+            <input class="form-control" required asp-for="BasionProsthionLength" />
+        </div>
+        <div class="form-group">
+            <label asp-for="BizygomaticDiameter">Bizygomatic Diameter:</label>
+            <input class="form-control" required asp-for="BizygomaticDiameter" />
+        </div>
+        <div class="form-group">
+            <label asp-for="NasionProsthion">Nasion Prosthion:</label>
+            <input class="form-control" required asp-for="NasionProsthion" />
+        </div>
+        <div class="form-group">
+            <label asp-for="MaximumNasalBreadth">Maximum Nasal Breadth:</label>
+            <input class="form-control" required asp-for="MaximumNasalBreadth" />
+        </div>
+        <div class="form-group">
+            <label asp-for="InterorbitalBreadth">InterorbitalBreadth:</label>
+            <input class="form-control" required asp-for="InterorbitalBreadth" />
+        </div>
+        <div class="form-group">
+            <label asp-for="BurialDepth">Burial Depth:</label>
+            <input class="form-control" required asp-for="BurialDepth" />
+        </div>
+        <label asp-for="BurialArtifactDescription">Burial Artifact Description:</label>
+        <textarea asp-for="BurialArtifactDescription"></textarea>
+        <h4>Buried with Artifacts?</h4>
+        <span class="radio-ghost-fill"></span>
+        <label>
+            <input required asp-for="BuriedWithArtifacts" value="True" type="radio" />
+            <span class="radio-ghost funkay"></span>
+            Yes
+        </label>
+        <label>
+            <input required asp-for="BuriedWithArtifacts" value="False" type="radio" />
+            <span class="radio-ghost funkay"></span>
+            No
+        </label>
+        <div class="form-group">
+            <label asp-for="GilesGender">Giles Gender:</label>
+            <input class="form-control" required asp-for="GilesGender" />
+        </div>
+        <div class="form-group">
+            <label asp-for="BodyGender">Body Gender:</label>
+            <input class="form-control" required asp-for="BodyGender" />
+        </div>
+    </form>
+
+
+</div>

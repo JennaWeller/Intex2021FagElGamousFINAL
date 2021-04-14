@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+
+    <!-- Bootstrap core CSS -->
+    <link href="~/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="~/css/modern-business.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img src="~/img/logo.png" width="240" alt="Fag el-Gamous'"></a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="ViewBurials">Burials</a>
+                    </li>
+
+                    @if (GlobalStatic.userID is null) //If user is no signed in
+                    {
+        <li class="nav-item">
+            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Signin">Log In</a>
+        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Register">Register</a>
+                        </li>}
+                    @if (!(GlobalStatic.userID is null)) // If user is signed in
+                    {
+        @if (GlobalStatic.role == "Admin" || GlobalStatic.role == "Researcher")
+        {
+<li class="nav-item">
+    <a class="nav-link " asp-area="" asp-controller="Home" asp-action="AddBurial">Add Burial</a>
+</li>
+                    <li class="nav-item">
+                        <a class="nav-link " asp-area="" asp-controller="Home" asp-action="AddFieldBook">Add Field Book</a>
+                    </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link " asp-area="" asp-controller="Home" asp-action="AddBiologicalSite">Add Biological Sample</a>
+                                        </li>
+                                                            <li class="nav-item">
+                                                                <a class="nav-link " asp-area="" asp-controller="Home" asp-action="C14data">Add C14 Data</a>
+                                                            </li>
+                                                                                <li class="nav-item">
+                                                                                    <a class="nav-link " asp-area="" asp-controller="Home" asp-action="">Add Cranial Main</a>
+                                                                                </li>}
+
+                        @if (GlobalStatic.role == "Admin")
+                        {
+        <li class="nav-item">
+            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Admin">Admin</a>
+        </li>}
+
+                                        <li class="nav-item">
+                                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Profile">Welcome @GlobalStatic.FirstName!</a>
+                                        </li>
+                                                        <li class="nav-item">
+                                                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Logout">Logout</a>
+                                                        </li>}
+                </ul>
+            </div>
+        </div>
+    </nav>
+    </br>
+    </br>
+
+    @RenderBody()
+
+    <!-- Footer -->
+    <footer class="py-5 bg-light">
+        <div class="container">
+            <p class="m-0 text-center text-dark">Copyright &copy; Fag el-Gamous 2021</p>
+        </div>
+        <!-- /.container -->
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script src="~/vendor/jquery/jquery.min.js"></script>
+    <script src="~/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,35 @@
+﻿@model ProfileViewModel
+
+<div class="container">
+    <main role="main" class="pb-3">
+        <div>
+            <h2>Manage your account</h2>
+            <h4>Change your account settings</h4>
+            <hr />
+            <div class="row">
+                <div class="col-md-3">
+                    <ul class="nav nav-pills flex-column">
+                        <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Profile">Profile</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Home" asp-action="ResetEmail">Email</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Home" asp-action="ResetPassword">Password</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Home" asp-action="ResetUserInfo">Personal data</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-9">
+                    <h4>First Name:</h4>
+                    <h6>@Model.FirstName</h6>
+                    <br />
+                    <h4>Last Name:</h4>
+                    <h6>@Model.LastName</h6>
+                    <br />
+                    <h4>Email:</h4>
+                    <h6>@Model.Email</h6>
+                    <br />
+                    <h4>Role:</h4>
+                    <h6>@Model.Role</h6>
+                    <br />
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
